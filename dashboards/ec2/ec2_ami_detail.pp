@@ -9,7 +9,6 @@ dashboard "ec2_ami_detail" {
 
   input "ami" {
     title = "Select an image:"
-    type = "single"
     query = query.ec2_ami_input
     width = 4
   }

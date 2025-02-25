@@ -7,14 +7,17 @@ dashboard "ec2_ami_detail" {
     type = "Detail"
   })
 
-  input "ami" {
-    title = "Select an image:"
-    query = query.ec2_ami_input
-    width = 4
-  }
+  
 
   container {
-
+    
+    input "ami" {
+      title = "Select an image:"
+      type = "select"
+      query = query.ec2_ami_input
+      width = 4
+    }
+    
     card {
       width = 3
       query = query.ec2_ami_state
@@ -154,7 +157,11 @@ query "ec2_ami_input" {
   sql = <<-EOQ
     select
       name as label,
-      image_id as value
+      image_id as value,
+      json_build_object(
+        'account_id', account_id,
+        'region', region
+      ) as tags
     from
       aws_ec2_ami
     order by

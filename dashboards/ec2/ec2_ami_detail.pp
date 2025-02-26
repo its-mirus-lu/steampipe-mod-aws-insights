@@ -8,15 +8,15 @@ dashboard "ec2_ami_detail" {
   })
 
   
-  input "ami" {
-    title = "Select an image:"
-    type = "select"
-    query = query.ec2_ami_input
-    width = 4
-  }
 
   container {
     
+    input "ami" {
+      title = "Select an image:"
+      type = "select"
+      query = query.ec2_ami_input
+      width = 4
+    }
     
     card {
       width = 3
@@ -165,7 +165,7 @@ query "ec2_ami_input" {
     from
       aws_ec2_ami
     order by
-      name;
+      label;
   EOQ
 }
 

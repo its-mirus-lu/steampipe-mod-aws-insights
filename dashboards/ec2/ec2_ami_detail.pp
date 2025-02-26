@@ -18,29 +18,29 @@ dashboard "ec2_ami_detail" {
   container {
     
     
-    card {
-      width = 3
-      query = query.ec2_ami_state
-      args  = [self.input.ami.value]
-    }
+    # card {
+    #   width = 3
+    #   query = query.ec2_ami_state
+    #   args  = [self.input.ami.value]
+    # }
 
-    card {
-      width = 3
-      query = query.ec2_ami_architecture
-      args  = [self.input.ami.value]
-    }
+    # card {
+    #   width = 3
+    #   query = query.ec2_ami_architecture
+    #   args  = [self.input.ami.value]
+    # }
 
-    card {
-      width = 3
-      query = query.ec2_ami_hypervisor
-      args  = [self.input.ami.value]
-    }
+    # card {
+    #   width = 3
+    #   query = query.ec2_ami_hypervisor
+    #   args  = [self.input.ami.value]
+    # }
 
-    card {
-      width = 3
-      query = query.ec2_ami_virtualization
-      args  = [self.input.ami.value]
-    }
+    # card {
+    #   width = 3
+    #   query = query.ec2_ami_virtualization
+    #   args  = [self.input.ami.value]
+    # }
 
   }
 

@@ -165,7 +165,7 @@ query "ec2_ami_input" {
     from
       aws_ec2_ami
     order by
-      name;
+      value;
   EOQ
 }
 

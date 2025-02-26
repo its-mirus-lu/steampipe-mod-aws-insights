@@ -154,7 +154,7 @@ dashboard "ec2_ami_detail" {
 # Input queries
 
 query "ec2_ami_input" {
-  sql = <<-EOQ
+  sql = <<-EOT
     select
       name as label,
       image_id as value,
@@ -166,7 +166,7 @@ query "ec2_ami_input" {
       aws_ec2_ami
     order by
       title;
-  EOQ
+  EOT
 }
 
 # With queries

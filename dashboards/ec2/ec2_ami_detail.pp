@@ -21,7 +21,7 @@ dashboard "ec2_ami_detail" {
 query "ec2_ami_input" {
   sql = <<-EOQ
     select
-      name as label,
+      LEFT(name, 10) as label,
       image_id as value,
       json_build_object(
         'account_id', account_id,

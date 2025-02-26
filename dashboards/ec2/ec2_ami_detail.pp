@@ -156,14 +156,14 @@ dashboard "ec2_ami_detail" {
 query "ec2_ami_input" {
   sql = <<-EOQ
     select
-      title as label,
-      arn as value,
+      name as label,
+      image_id as value,
       json_build_object(
         'account_id', account_id,
         'region', region
       ) as tags
     from
-      aws_ec2_application_load_balancer
+      aws_ec2_ami
     order by
       title;
   EOQ
